@@ -1,13 +1,14 @@
 Package.describe({
-  version: '0.0.0',
-  summary: "Offline storage, improved. Wraps IndexedDB, WebSQL, or localStorage using a simple but powerful API."
+  name: 'raix:localforage',
+  version: '1.2.6',
+  summary: "Offline storage, improved. Wraps IndexedDB, WebSQL, or localStorage using a simple but powerful API.",
+  git: 'http://github.com/raix/Meteor-localforage'
 });
 
 Package.on_use(function (api) {
-  api.add_files('drivers/indexeddb.js', 'client');
-  api.add_files('drivers/localstorage.js', 'client');
-  api.add_files('drivers/websql.js', 'client');
+  api.versionsFrom('METEOR@1.0');
+
   api.add_files('localforage.js', 'client');
 
-  //api.export('$', 'client');
+  // api.export('localforage', 'client');
 });
